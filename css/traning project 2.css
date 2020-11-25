@@ -6,6 +6,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+body
+{
+    perspective: 100%;
+}
 .container
 {
     width: 80%;
@@ -83,8 +87,9 @@ a
 {
     position: fixed;
     width: 100%;
-    z-index: 3;
-    margin-top: 5px;
+    z-index: 1;
+    margin-top: 0px;
+    transition: background-color 0.7s;
 }
 .logo
 {
@@ -422,6 +427,7 @@ a
 .choose .container
 {
     position: relative;
+    perspective: 600px;
 }
 .choose-img
 {
@@ -429,11 +435,24 @@ a
     float: left;
     margin-left: 10%;
     height: 100%;
-    background: url("../images/about/about1.webp") no-repeat;
     position: absolute;
     right: 0;
     top: -30%;
-    transform: translate(-10deg);
+    overflow: hidden;
+}
+.choose-img-photo
+{
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+.choose-img-photo1
+{
+    left: 613px;
+    z-index: -1;
+    transform: scale(0.8);
 }
 .choose-img-move
 {
@@ -447,30 +466,15 @@ a
     top: 75%;
     z-index: 1;
 }
-@keyframes choose-img-change
+@keyframes slider-photo1
 {
-
+    0%{left: 0;transform: scale(1)}
+    100%{left: -493px;transform: scale(0.8)}
 }
-.choose-img-move2
+@keyframes slider-photo2
 {
-    left: 78%;
-}
-.choose-img-move:hover
-{
-    width: 20px;
-    border-radius: 5px;
-    opacity: 0.6;
-}
-.choose-img-move1:hover ~.choose-img
-{
-    opacity: 1;
-    background: url("../images/about/about1.webp") no-repeat;
-}
-.choose-img-move2:hover ~.choose-img
-{
-    opacity: 1;
-    transition: opacity 1s;
-    background: url("../images/about/about2.webp") no-repeat;
+    0%{left: 613px;transform: scale(0.8)}
+    100%{left: 0px;transform: scale(1)}
 }
 /*number*/
 .number
