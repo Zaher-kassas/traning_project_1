@@ -433,8 +433,7 @@ a
     position: absolute;
     right: 0;
     top: -30%;
-    opacity: 0.8;
-    transition: opacity 0.3s;
+    transform: translate(-10deg);
 }
 .choose-img-move
 {
@@ -447,6 +446,10 @@ a
     left: 75%;
     top: 75%;
     z-index: 1;
+}
+@keyframes choose-img-change
+{
+
 }
 .choose-img-move2
 {
